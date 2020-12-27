@@ -1,0 +1,86 @@
+<html>
+    <head>
+        <title> House Price Prediction </title>
+    </head>
+    <style>
+        body{
+    margin-left: 80px;
+    padding: 0;
+    background-color: beige;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.heading{
+    padding-top: 0;
+    padding-left: 440px;
+}
+
+.details{
+    padding-top: 20px;
+    padding-left: 25px;
+    width: 436px;
+    height: 530px;
+    background: #fff;
+    color: #fff;
+    position: absolute;
+    box-sizing: border-box;
+}
+
+
+.result{
+    padding-top: 100px;
+    padding-left: 580px;
+}
+
+.button{
+    height: 60px;
+    width: 100px;
+    background-color: #fff;
+    border: none;
+    padding: 20px;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 2px;
+}
+
+.answer{
+    padding-left: 840px;
+}
+    </style>
+    <body>
+        <div class = "heading">
+        <h1>House Price Prediction</h1>
+    </div>
+    <h3>Enter the details</h3>
+            <form action = "{{ url_for('prediction')}}" method = "post" align = "left">
+                <div class = "details">    
+                <input type = 'text' placeholder = "Quality" name = 'Quality' size = '50' height = '65'/>
+                <br><br>
+                <input type = 'text' placeholder = "YearBuilt" name = 'YearBuilt' size = '50' height = '65'/>
+                <br><br>
+                <input type = 'text' placeholder = "BasementArea" name = 'BasementArea' size = '50' height = '65'/>
+                <br><br>
+                <input type = 'text' placeholder = "Area" name = 'Area' size = '50' height = '65'/>
+                <br><br>
+                <input type = 'text' placeholder = "BathroomNos" name = 'BathroomNos' size = '50' height = '65'/>
+                <br><br>
+                <input type = 'text' placeholder = "GarageCars" name = 'GarageCars' size = '50' height = '65'/>
+                <br><br>
+                <input type = 'text' placeholder = "GarageArea" name = 'GarageArea' size = '50' height = '65'/>
+                <br><br>
+                <input type = 'text' placeholder = "Foundation" name = 'Foundation' size = '50' height = '65'/>
+                <br><br>
+                <input type = 'text' placeholder = "CentralAC" name = 'CentralAC' size = '50' height = '65'/>
+                <br><br>
+                <input type = 'text' placeholder = "GarageType" name = 'GarageType' size = '50' height = '65'/>
+                </div>
+                <div class = "result">
+                <button class = "button" type = 'submit' value = 'Predict'>Predict</button>
+                </div>
+                <div class = "answer">
+                <h1>{{ prediction_text }}</h1>
+                </div>
+            </form>
+    </body>
+</html>
