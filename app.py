@@ -11,17 +11,25 @@ def hello_world():
 
 @app.route('/prediction', methods = ['POST'])
 def prediction():
-
+    print("yes")
     Quality = request.form['Quality']
     YearBuilt = request.form['YearBuilt']
     BasementArea = request.form['BasementArea']
+    print("yes")
     Area = request.form['Area']
+    print("yes")
     BathroomNos = request.form['BathroomNos']
+    print("yes")
     GarageCars = request.form['GarageCars']
+    print("yes")
     GarageArea = request.form['GarageArea']
+    print("yes")
     Encoded_Foundation = request.form['Foundation']
-    Encoded_CentralAC = request.form['CentralAC']
-    Encoded_GarageType = request.form['GarageType']
+    print("yes")
+    Encoded_CentralAC = request.form.get('CentralAC')
+    print("yes")
+    Encoded_GarageType = request.form.get('GarageType')
+    print("yes")
     
     Quality, YearBuilt, BasementArea, Area, BathroomNos, GarageCars, GarageArea, Encoded_Foundation, Encoded_CentralAC, Encoded_GarageType = int(Quality), int(YearBuilt), int(BasementArea), int(Area), int(BathroomNos), int(GarageCars), int(GarageArea), int(Encoded_Foundation), int(Encoded_CentralAC), int(Encoded_GarageType)  
     scaled_values = scaler.transform([[Quality, YearBuilt, BasementArea, Area, BathroomNos, GarageCars, GarageArea, Encoded_Foundation, Encoded_CentralAC, Encoded_GarageType]])
